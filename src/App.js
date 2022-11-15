@@ -8,7 +8,7 @@ const reducer = (state, action) => {
     case "INIT": {
       return action.data;
     }
-    case "CRARTE": {
+    case "CREATE": {
       newState = [action.data, ...state];
       break;
     }
@@ -27,7 +27,6 @@ const reducer = (state, action) => {
   }
   return newState;
 };
-
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
@@ -87,7 +86,7 @@ function App() {
   //EDIT
   const onEdit = (targetId, date, content, emotion) => {
     dispatch({
-      type: "ONEDIT",
+      type: "EDIT",
       data: {
         id: targetId,
         date: new Date(date).getTime(),
@@ -96,6 +95,7 @@ function App() {
       },
     });
   };
+
   return (
     <DiaryStateContext.Provider value={data}>
       <DiaryDispatchContext.Provider value={{ onCreate, onEdit, onRemove }}>
