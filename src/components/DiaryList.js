@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DiaryItem from "./DiaryItem";
 import MyButton from "./MyButton";
@@ -21,9 +21,9 @@ const ControlMenu = React.memo(({ value, onChange, optionList }) => {
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
-      {optionList.map((it, idx) => (
-        <option key={idx} value={it.value}>
-          {it.name}
+      {optionList.map((item, idx) => (
+        <option key={idx} value={item.value}>
+          {item.name}
         </option>
       ))}
     </select>
@@ -53,7 +53,9 @@ const DiaryList = ({ diaryList }) => {
     const copyList = JSON.parse(JSON.stringify(diaryList));
 
     const filteredList =
-      filter === "all" ? copyList : copyList.filter((it) => filterCallBack(it));
+      filter === "all"
+        ? copyList
+        : copyList.filter((item) => filterCallBack(item));
     const sortedList = filteredList.sort(compare);
     return sortedList;
   };
@@ -81,8 +83,8 @@ const DiaryList = ({ diaryList }) => {
           />
         </div>
       </div>
-      {getProcessdDiaryList().map((it) => (
-        <DiaryItem key={it.id} {...it} />
+      {getProcessdDiaryList().map((item) => (
+        <DiaryItem key={item.id} {...item} />
       ))}
     </div>
   );

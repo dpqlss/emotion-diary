@@ -1,11 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
+@font-face {
+  font-family: 'Humanbumsuk';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 body {
   background-color: #f6f6f6;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Nanum Pen Script';
+  font-family: 'Humanbumsuk';
   min-height: 100vh;
   margin: 0 auto;
 }
@@ -41,7 +55,7 @@ body {
   padding: 10px 20px;
   font-size: 18px;
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: "Humanbumsuk";
 }
 
 .MyButton_default {
@@ -89,7 +103,7 @@ header .head_btn_right {
 }
 
 header button {
-  font-family: "Nanum Pen Script";
+  font-family: "Humanbumsuk";
 }
 
 /* DiaryList */
@@ -116,7 +130,7 @@ header button {
   background-color: #ecececec;
   padding: 10px 20px;
   cursor:pointer;
-  font-family: 'Nanum Pen Script';
+  font-family: 'Humanbumsuk';
   font-size: 18px;
 }
 
@@ -166,8 +180,8 @@ header button {
 
 .DiaryItem .diary_date {
   font-weight: bold;
-  font-size: 25px;
-  margin-bottom: 5px;
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .DiaryItem .diary_content_previw {
@@ -195,7 +209,7 @@ header button {
   background-color: #ececec;
   padding: 10px 20px;
   cursor: pointer;
-  font-size: 'Nanum pen script';
+  font-size: 'Humanbumsuk';
   font-size: 18px;
 }
 
@@ -208,7 +222,7 @@ header button {
 .DiaryEditor textarea {
   width: 100%;
   min-height: 200px;
-  font-family: 'Nanum Pen Script';
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
   font-size: 20px;
   box-sizing: border-box;
   resize: vertical;
@@ -243,6 +257,7 @@ header button {
 
 .EmotionItem span {
   font-size: 18px;
+  padding: 10px;
 }
 
 .EmotionItem_off{
@@ -282,7 +297,7 @@ header button {
   align-items: center;
   text-align: center;
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .DiaryPage h4 {
@@ -338,8 +353,8 @@ header button {
   padding: 20px;
   text-align: left;
   font-size: 20px;
-  font-family: 'Yeon Sung';
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
   font-weight: 400;
-  line-height: 2.5;
+  line-height: 1.5;
 }
  

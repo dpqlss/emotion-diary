@@ -95,12 +95,12 @@ const DiaryEditor = ({ isEdit, originData }) => {
         <section>
           <h4>오늘의 감정</h4>
           <div className="Input_box emotion_list_wrapper">
-            {emotionList.map((it) => (
+            {emotionList.map((item) => (
               <EmotionItem
-                key={it.emotion_id}
-                {...it}
+                key={item.emotion_id}
+                {...item}
                 onClick={handleClickEmote}
-                isSelected={it.emotion_id === emotion}
+                isSelected={item.emotion_id === emotion}
               />
             ))}
           </div>

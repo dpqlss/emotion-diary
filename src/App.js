@@ -13,12 +13,12 @@ const reducer = (state, action) => {
       break;
     }
     case "REMOVE": {
-      newState = state.filter((it) => it.id !== action.targetId);
+      newState = state.filter((item) => item.id !== action.targetId);
       break;
     }
     case "EDIT": {
-      newState = state.map((it) =>
-        it.id === action.data.id ? { ...action.data } : it
+      newState = state.map((item) =>
+        item.id === action.data.id ? { ...action.data } : item
       );
       break;
     }
@@ -74,8 +74,11 @@ function App() {
       const diaryList = JSON.parse(localData).sort(
         (a, b) => parseInt(b.id) - parseInt(a.id)
       );
-      dataId.current = parseInt(diaryList[0].id) + 1;
-      dispatch({ type: "INIT", data: diaryList });
+
+      if (diaryList.length >= 1) {
+        dataId.current = parseInt(diaryList[0].id) + 1;
+        dispatch({ type: "INIT", data: diaryList });
+      }
     }
   }, []);
   const dataId = useRef(6);

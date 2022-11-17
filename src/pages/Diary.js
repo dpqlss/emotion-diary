@@ -21,7 +21,7 @@ const Diary = () => {
   useEffect(() => {
     if (diaryList.length >= 1) {
       const targetDiary = diaryList.find(
-        (it) => parseInt(it.id) === parseInt(id)
+        (item) => parseInt(item.id) === parseInt(id)
       );
       if (targetDiary) {
         setData(targetDiary);
@@ -36,7 +36,7 @@ const Diary = () => {
     return <div className="DiaryPage"> 로딩중입니다...</div>;
   } else {
     const curEmotionData = emotionList.find(
-      (it) => parseInt(it.emotion_id) === parseInt(data.emotion)
+      (item) => parseInt(item.emotion_id) === parseInt(data.emotion)
     );
     return (
       <div className="DiaryPage">

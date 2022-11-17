@@ -22,6 +22,6 @@ export const emotionList = [
   {
     emotion_id: 5,
     emotion_img: process.env.PUBLIC_URL + `/assets/emotion5.png`,
-    emotion_descript: "끔찍함",
+    emotion_descript: "완전 나쁨",
   },
 ];

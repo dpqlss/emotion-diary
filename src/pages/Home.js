@@ -12,6 +12,11 @@ const Home = () => {
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
   useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `Diary`;
+  }, []);
+
+  useEffect(() => {
     if (diaryList.length >= 1) {
       const firstDay = new Date(
         curDate.getFullYear(),
@@ -28,7 +33,9 @@ const Home = () => {
         59
       ).getTime();
       setData(
-        diaryList.filter((it) => firstDay <= it.date && it.date <= lastDay)
+        diaryList.filter(
+          (item) => firstDay <= item.date && item.date <= lastDay
+        )
       );
     }
   }, [diaryList, curDate]);
