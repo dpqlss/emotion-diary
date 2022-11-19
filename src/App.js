@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer, useRef } from "react";
 import "./App.css";
 import Router from "./Router";
+import { firestore } from "./firebaseConfig";
 
 const reducer = (state, action) => {
   let newState = [];
@@ -32,41 +33,17 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
-// const dummyData = [
-//   {
-//     id: 1,
-//     emotion: 1,
-//     content: "오늘의 일기 1번",
-//     date: 1668389545910,
-//   },
-//   {
-//     id: 2,
-//     emotion: 2,
-//     content: "오늘의 일기 2번",
-//     date: 1668389545911,
-//   },
-//   {
-//     id: 3,
-//     emotion: 3,
-//     content: "오늘의 일기 3번",
-//     date: 1668389545912,
-//   },
-//   {
-//     id: 4,
-//     emotion: 4,
-//     content: "오늘의 일기 4번",
-//     date: 1668389545913,
-//   },
-//   {
-//     id: 5,
-//     emotion: 5,
-//     content: "오늘의 일기 5번",
-//     date: 1668389545914,
-//   },
-// ];
-
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
+
+  useEffect(() => {
+    const diary = firestore.collection("diary");
+
+    diary.add({ text: data, completed: true }).then((result) => {
+      // 새로운 document의 id
+      console.log("new id", result.id);
+    });
+  });
 
   useEffect(() => {
     const localData = localStorage.getItem("diary");
