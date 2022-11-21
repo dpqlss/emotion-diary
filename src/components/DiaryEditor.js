@@ -13,6 +13,8 @@ import { emotionList } from "../util/emotion.js";
 import MyHeader from "./MyHeader";
 import MyButton from "./MyButton";
 import EmotionItem from "./EmotionItem";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../firebase.js";
 
 const DiaryEditor = ({ isEdit, originData }) => {
   const contentRef = useRef();
@@ -40,6 +42,11 @@ const DiaryEditor = ({ isEdit, originData }) => {
     ) {
       if (!isEdit) {
         onCreate(date, content, emotion);
+        addDoc(collection(db, "diary_list"), {
+          content: content,
+          emotion: emotion,
+          date: new Date(),
+        });
       } else {
         onEdit(originData.id, date, content, emotion);
       }
