@@ -13,7 +13,7 @@ import { emotionList } from "../util/emotion.js";
 import MyHeader from "./MyHeader";
 import MyButton from "./MyButton";
 import EmotionItem from "./EmotionItem";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase.js";
 
 const DiaryEditor = ({ isEdit, originData }) => {
@@ -59,6 +59,7 @@ const DiaryEditor = ({ isEdit, originData }) => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       onRemove(originData.id);
       navigate("/", { replace: true });
+      deleteDoc(doc(db, "diary_list"));
     }
   };
 

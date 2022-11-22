@@ -35,21 +35,6 @@ export const DiaryDispatchContext = React.createContext();
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
 
-  // const onSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (content === "") {
-  //     return;
-  //   }
-  //   await addDoc(collection(db, "diary_list"), {
-  //     content: content,
-  //     emotion: emotion,
-  //     date: new Date(),
-  //   });
-  // };
-  // useEffect(() => {
-  //   onSubmit();
-  // }, []);
-
   useEffect(() => {
     const localData = localStorage.getItem("diary");
     if (localData) {
