@@ -10,6 +10,7 @@
   <li>CSS</li>
   <li>Javascript</li>
   <li>React</li>
+  <li>Firebase</li>
 </ul>
 
 <h2>Eotion-Diary 기능</h2>
