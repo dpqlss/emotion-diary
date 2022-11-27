@@ -2,7 +2,11 @@
 
 배포 사이트 링크 : https://emotion-diary-dpqls.web.app/
 
-<p>React를 사용하여 만든 작은 일기장 입니다.</p>
+<p>
+  React를 강의를 참고하여 만든 작은 일기장 입니다.
+  Firestore Database를 연동하여 데이터를 받아오는 작업까지 해보고 싶어 유저가 작성한 데이터  받아오는 부분까지 작업하였습니다.
+</p>
+
 
 <h2>사용한 기술</h2>
 <ul>
